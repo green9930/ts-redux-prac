@@ -4,13 +4,14 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import App from "./App";
 import rootReducer from "./redux-todolist/context/redux";
+import { store } from "./redux-toolkit-counter/context/redux";
 // import rootReducer from "./redux-counter/context/redux";
 import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
 
 root.render(
   <React.StrictMode>

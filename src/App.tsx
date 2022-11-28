@@ -1,13 +1,14 @@
 import React from "react";
-import CounterContainer from "./redux-counter/components/CounterContainer";
+// import CounterContainer from "./redux-counter/components/CounterContainer";
 import TodoApp from "./redux-todolist/components/TodoApp";
-// import TodoList from "./redux-toolkit-todolist/components/TodoList";
+import { Counter } from "./redux-toolkit-counter/components/Counter";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <TodoApp />
+      {/* <TodoApp /> */}
       {/* <CounterContainer /> */}
+      <Counter />
     </div>
   );
 };
