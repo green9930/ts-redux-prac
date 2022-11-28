@@ -45,7 +45,8 @@ const todos = (
   state: TodosState = initialState,
   action: TodosAction
 ): TodosState => {
-  switch (action.type) {
+  const { type } = action;
+  switch (type) {
     case ADD_TODO:
       return state.concat({
         id: action.payload.id,
