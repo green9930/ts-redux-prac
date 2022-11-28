@@ -2,9 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-// import { store } from "./app/store";
 import App from "./App";
-import rootReducer from "./redux-counter/context/redux";
+import rootReducer from "./redux-todolist/context/redux";
+// import rootReducer from "./redux-counter/context/redux";
 import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root")!;

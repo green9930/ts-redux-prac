@@ -1,17 +1,31 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import TodoInsert from "../components/TodoInsert";
+import TodoList from "../components/TodoList";
 import { addTodo, removeTodo, toggleTodo } from "../context/modules/todo";
 import { RootState } from "../context/redux";
 
-const TodoApp = () => {
+function TodoApp() {
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
 
-  const onAddTodo = (text: string) => dispatch(addTodo(text));
-  const onToggleTodo = (id: number) => dispatch(toggleTodo(id));
-  const onRemoveTodo = (id: number) => dispatch(removeTodo(id));
+  const onInsert = (text: string) => {
+    dispatch(addTodo(text));
+  };
 
-  return <></>;
-};
+  const onToggle = (id: number) => {
+    dispatch(toggleTodo(id));
+  };
+
+  const onRemove = (id: number) => {
+    dispatch(removeTodo(id));
+  };
+
+  return (
+    <>
+      <TodoInsert onInsert={onInsert} />
+      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
+    </>
+  );
+}
 
 export default TodoApp;
